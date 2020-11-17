@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Eloquent\Model;
@@ -8,30 +7,36 @@ class CreateForeignKeys extends Migration {
 
 	public function up()
 	{
-		Schema::table('posts', function(Blueprint $table) {
+		/*Schema::table('posts', function(Blueprint $table) {
+
 			$table->foreign('category_id')->references('id')->on('categories')
 						->onDelete('restrict')
-						->onUpdate('restrict');
+						->onUpdate('restrict');	
 		});
+*/
+
 		Schema::table('notifications', function(Blueprint $table) {
 			$table->foreign('donation_request_id')->references('id')->on('donation_requests')
 						->onDelete('restrict')
 						->onUpdate('restrict');
 		});
-		Schema::table('cities', function(Blueprint $table) {
+
+		/*Schema::table('cities', function(Blueprint $table) {
 			$table->foreign('governorate_id')->references('id')->on('governorates')
 						->onDelete('restrict')
 						->onUpdate('restrict');
 		});
+*/
 		Schema::table('donation_requests', function(Blueprint $table) {
 			$table->foreign('client_id')->references('id')->on('clients')
 						->onDelete('restrict')
 						->onUpdate('restrict');
 		});
+
 		Schema::table('tokens', function(Blueprint $table) {
 			$table->foreign('client_id')->references('id')->on('clients')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('restrict')
+						->onUpdate('restrict'); 
 		});
 	}
 

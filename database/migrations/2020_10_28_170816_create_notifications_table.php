@@ -14,6 +14,7 @@ class CreateNotificationsTable extends Migration {
 			$table->integer('donation_request_id')->unsigned();
 			$table->timestamps();
 		});
+		
 	}
 
 	public function down()

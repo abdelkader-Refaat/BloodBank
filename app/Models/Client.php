@@ -3,9 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Permission\Traits\HasRoles;
+
 
 class Client extends Model 
 {
+     use HasRoles;
+     protected $guard_name = 'web';
 
     protected $table = 'clients';
     public $timestamps = true;

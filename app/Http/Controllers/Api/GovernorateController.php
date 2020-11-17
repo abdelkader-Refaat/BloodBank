@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Governorate;
 use RealRashid\SweetAlert\Facades\Alert;
 
-
-
 class GovernorateController extends Controller
 {
     
@@ -19,7 +17,7 @@ class GovernorateController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {  
         $records = Governorate::All();
         parent::__construct();
         

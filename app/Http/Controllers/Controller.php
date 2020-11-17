@@ -20,6 +20,7 @@ class Controller extends BaseController
             Alert::warning(session('success_message'),'good' );
 
         }
+   
 
     }
 }

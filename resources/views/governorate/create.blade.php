@@ -18,11 +18,7 @@
          'action'  => ['Api\GovernorateController@store'] 
         ]) !!}
 
-
      @include('partials.error')
-
-  
-  
 
   <div align='center'><label for="name">Governorate Name</label></div>
   {!! Form::text('name',null,[

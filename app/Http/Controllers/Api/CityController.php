@@ -19,17 +19,15 @@ class CityController extends Controller
      */
     public function index(Request $request)
     {  
-        parent::__construct();
+         parent::__construct();
 
          $records = City::all();
          //$govs    = City::find(4)->governorate->name;
         return view('city.index')->with([
-
                 'records' => $records,
                 // 'govs'    => $govs
         ]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -49,18 +47,15 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-         
-        $rules  = [
-          
+          $rules  = [  
           'name' => 'required',
           'governorate_id' =>'required'
 
         ];
         $msg = [
-
                 'name.required' => 'the city name is required',
                 'governorate_id.required' => 'select your governorate',
-        ];
+            ];
         $this->validate($request,$rules,$msg);
         City::create($request->all());
         Alert::alert('create City ', 'Good City Created' , 'success');

@@ -8,7 +8,7 @@ class CreateGovernoratesTable extends Migration {
 	public function up()
 	{
 		Schema::create('governorates', function(Blueprint $table) {
-			$table->auto_increments('id');
+			$table->increments('id');
 			$table->string('name')->unique();
 			$table->timestamps();
 			

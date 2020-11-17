@@ -15,6 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     { 
+         parent::__construct();
+
          $records  = Category::paginate('10');
          return view('category.index', compact('records'));
         
