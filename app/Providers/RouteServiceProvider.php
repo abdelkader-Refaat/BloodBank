@@ -47,6 +47,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapWebRoutes();
 
         // created routes for blood bank project 
+        
         $this->mapWebBloodBankRoutes();
         $this->mapApiBloodBankRoutes();
 

@@ -15,22 +15,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+ /*
 Route::group([
 //'middleware' => 'auth',	
 'namespace' => 'Front',
 'prefix'    => 'visit'
 ]  , function(){
 
-	Route::get('/home', 'MainController@index')->name('home');
-});
+	Route::get('/home', 'MainController@index')->name('visit.home');
+	Route::get('/about', 'MainController@about')->name('visit.about');
+});*/
 
-// Route::get('/home', 'HomeController@index')->name('home');
   // route Resources 
+/*
+Route::group(
+   [
+	'namespace'  => 'Api',
+	'middleware' => 'auth'
+	], function(){
 
- Route::Resource('governorate','Api\GovernorateController');
- Route::Resource('city','Api\CityController');
- Route::Resource('category','Api\CategoryController');
- Route::get('post/create','Api\PostController@create')->name('post.create')->middleware('role:writer|admin');
-   Route::get('post/edit','Api\PostController@edit')->name('post.edit')->middleware('role:editor|admin');
- Route::Resource('post','Api\PostController')->except(['create','edit']);
- Route::Resource('settings','Api\SettingsController');
+ Route::Resource('governorate','GovernorateController');
+ Route::Resource('city','CityController');
+ Route::Resource('category','CategoryController');
+ Route::get('post/create','PostController@create')->name('post.create')->middleware('role:writer|admin');
+ Route::get('post/edit','PostController@edit')->name('post.edit')->middleware('role:editor|admin');
+ Route::Resource('post','PostController')->except(['create','edit']);
+ Route::Resource('settings','SettingsController');
+
+});*/
